@@ -8,15 +8,13 @@ extern "C"{
 #include <libswscale/swscale.h>
 }
 
-class player
+class player: public QObject
 {
+    Q_OBJECT
+    AVFormatContext* format_context = NULL;
 public:
     player();
-    AVFormatContext* format_context = NULL;
-
-
-
-    bool openFile(const char*);
+    Q_INVOKABLE bool openFile(QString);
 };
 
 #endif // PLAYER_H
