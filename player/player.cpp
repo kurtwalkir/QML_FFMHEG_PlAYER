@@ -8,6 +8,9 @@ player::player()
 bool player::openFile(QString filename="./RaspberryPi4.mp4")
 {
     bool result {true};
+
+
+    SDL_Init(SDL_INIT_VIDEO);
     int err = avformat_open_input(&format_context, filename.toStdString().c_str(), NULL, NULL);
     if(err>=0)
     {

@@ -34,5 +34,7 @@ HEADERS += \
     player/player.h
 
 INCLUDEPATH += $$PWD/ffmpeg/headers/
-LIBS += -L$$PWD/ffmpeg/lib -lavcodec -lavformat -lswscale -lavutil -lswresample
+INCLUDEPATH += $$PWD/ffmpeg/headers/sdl/
+
+LIBS += -L$$PWD/ffmpeg/lib -lavcodec -lavformat -lswscale -lavutil -lswresample -lSDL
 
